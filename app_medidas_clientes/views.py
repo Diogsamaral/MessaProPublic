@@ -77,3 +77,17 @@ def exibir_pessoa(request, pessoa_id):
     pessoa = get_object_or_404(Pessoa, id=pessoa_id)
     return render(request, 'exibir_pessoa.html', {'pessoa': pessoa})
 
+
+
+def todas_pessoas(request):
+    # Consulta o banco de dados e obtém todos os registros do modelo MeuModelo
+    todos_os_registros = Pessoa.objects.all()
+    
+    # Passe os registros para o template usando um dicionário
+    context = {
+        'registros': todos_os_registros,
+    }
+    
+    # Renderiza o template com os dados e retorna a resposta HTTP
+    return render(request, 'todas-pessoas.html', context)
+

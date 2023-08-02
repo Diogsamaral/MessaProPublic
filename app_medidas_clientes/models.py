@@ -27,3 +27,5 @@ class Pessoa(models.Model):
     larg_perna = models.IntegerField()
     comp_saia = models.IntegerField()
     comp_calca = models.IntegerField()
+
+
