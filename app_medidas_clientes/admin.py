@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Pessoa
 
-# Register your models here.
+# Registre o modelo Pessoa para que ele apareça no admin do Django
+admin.site.register(Pessoa)
