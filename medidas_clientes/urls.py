@@ -11,4 +11,5 @@ urlpatterns = [
     path('buscar/', buscar_pessoas, name='buscar_pessoas'),
     path('cadastrar-pessoa/', cadastrar_pessoa, name='cadastro-pessoa'),
     path('pessoa/<int:pessoa_id>/', views.exibir_pessoa, name='detalhes_pessoa'),
+    path('todas-pessoas/', views.todas_pessoas, name='todas_pessoas'),
 ]
