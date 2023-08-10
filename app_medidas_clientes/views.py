@@ -1,12 +1,15 @@
 from django.shortcuts import render, redirect
 from .models import Pessoa
 from django.shortcuts import render, get_object_or_404
+from .forms import TecidoForm
+from django.urls import reverse
+
 
 
 def buscar_pessoas(request):
     if 'query' in request.GET:
         query = request.GET['query']
-        resultados = Pessoa.objects.filter(nome__icontains=query)
+        resultados = Pessoa.objects.filter(nome__icontains=query) | Pessoa.objects.filter(empresa__icontains=query)
     else:
         resultados = None
 
@@ -91,3 +94,14 @@ def todas_pessoas(request):
     # Renderiza o template com os dados e retorna a resposta HTTP
     return render(request, 'todas-pessoas.html', context)
 
+
+
+def novo_tecido(request):
+    if request.method == 'POST':
+        form = TecidoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('novo_tecido'))  # Redireciona para a URL nomeada 'novo_tecido'
+    else:
+        form = TecidoForm()
+    return render(request, 'novo_tecido.html', {'form': form})

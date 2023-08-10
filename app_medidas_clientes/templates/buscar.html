@@ -1,11 +1,48 @@
-<form method="GET" action="{% url 'buscar_pessoas' %}">
-    <input type="text" name="query" placeholder="Digite um nome">
-    <button type="submit">Buscar</button>
-</form>
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Messa.Pro</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'app_medidas_clientes/busca.css' %}">
+    <style>
+        button {
+            margin: 10px;
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            padding: 0.6em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        section {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>MESSA.PRO</H1>
+    <form method="GET" action="{% url 'buscar_pessoas' %}">
+        <input type="text" name="query" placeholder="Digite um nome">
+        <button type="submit">Buscar</button>
+    </form>
+
+    <section>
+         <!-- Adicione os botões abaixo do formulário -->
+        <a href="{% url 'cadastro-pessoa' %}">
+            <button>Cadastrar Pessoa</button>
+        </a>
+        <a href="{% url 'novo_tecido' %}">
+            <button>Novo Tecido</button>
+        </a>
+    </section>
 
 
-
-{% block content %}
     <h2>Resultados da pesquisa:</h2>
 
     {% if resultados %}
@@ -17,4 +54,5 @@
     {% else %}
         <p>Nenhum resultado encontrado.</p>
     {% endif %}
-{% endblock %}
+</body>
+</html>

@@ -1,14 +1,20 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Minha Página</title>
+    
+    <title>Messa.Pro</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'app_medidas_clientes/busca.css' %}">
+
 </head>
 <body>
-    <h1>Informações do Banco de Dados:</h1>
+    {% block content %}
+    <h2>Informações do Banco de Dados:</h2>
     <ul>
         {% for registro in registros %}
             <li>{{ registro.nome }}, {{ registro.email }}, {{ registro.contato }}</li>
         {% endfor %}
     </ul>
+    {% endblock %}
 </body>
 </html>

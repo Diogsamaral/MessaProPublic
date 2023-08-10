@@ -1,5 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Messa.Pro</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'app_medidas_clientes/busca.css' %}">
 
-{% block content %}
+</head> 
+<body>
+    
+    {% block content %}
     {% if pessoa %}
         <h2>Detalhes da Pessoa</h2>
 
@@ -28,4 +38,6 @@
     {% else %}
         <p>Pessoa não encontrada.</p>
     {% endif %}
-{% endblock %}
+    {% endblock %}
+</body>
+</html>
