@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-from .models import Pessoa
+from .models import Pessoa, Tecido, Aviamento
 from django.shortcuts import render, get_object_or_404
-from .forms import TecidoForm
+from .forms import TecidoForm, AviamentoForm
 from django.urls import reverse
 
 
@@ -9,11 +9,21 @@ from django.urls import reverse
 def buscar_pessoas(request):
     if 'query' in request.GET:
         query = request.GET['query']
-        resultados = Pessoa.objects.filter(nome__icontains=query) | Pessoa.objects.filter(empresa__icontains=query)
+        resultados = Pessoa.objects.filter(nome__icontains=query) | Pessoa.objects.filter(empresa__icontains=query)        
+        aviamentos = Aviamento.objects.filter(artigo__icontains=query)
+        tecidos = Tecido.objects.filter(artigo__icontains=query)
     else:
         resultados = None
+        aviamentos = None
+        tecidos = None
 
-    return render(request, 'buscar.html', {'resultados': resultados})
+    return render(request, 'buscar.html', {'resultados': resultados, 'aviamentos': aviamentos, 'tecidos': tecidos})
+
+
+
+
+
+
 
 def home(request):
     return render(request, 'home.html')
@@ -105,3 +115,14 @@ def novo_tecido(request):
     else:
         form = TecidoForm()
     return render(request, 'novo_tecido.html', {'form': form})
+
+
+def novo_aviamento(request):
+    if request.method == 'POST':
+        form = AviamentoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('novo_aviamento'))  # Redireciona para a URL nomeada 'novo_tecido'
+    else:
+        form = AviamentoForm()
+    return render(request, 'novo_aviamento.html', {'form': form})
