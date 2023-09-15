@@ -21,10 +21,6 @@ def buscar_pessoas(request):
 
 
 
-
-
-
-
 def home(request):
     return render(request, 'home.html')
 
@@ -53,6 +49,19 @@ def cadastrar_pessoa(request):
         larg_perna = request.POST.get('larg_perna')
         comp_saia = request.POST.get('comp_saia')
         comp_calca = request.POST.get('comp_calca')
+        tamanho_blazer = request.POST.get('tamanho_blazer')
+        tamanho_jaqueta = request.POST.get('tamanho_jaqueta')
+        tamanho_calca_social = request.POST.get('tamanho_calca_social')
+        tamanho_calca_cigarrete = request.POST.get('tamanho_calca_cigarrete')
+        tamanho_calca_jeans = request.POST.get('tamanho_calca_jeans')
+        tamanho_saia = request.POST.get('tamanho_saia')
+        tamanho_gilet = request.POST.get('tamanho_gilet')
+        tamanho_camisa_sem_manga = request.POST.get('tamanho_camisa_sem_manga')
+        tamanho_camisa_manga_curta = request.POST.get('tamanho_camisa_manga_curta')
+        tamanho_camisa_manga_longa = request.POST.get('tamanho_camisa_manga_longa')
+        tamanho_camisa_manga_3_4 = request.POST.get('tamanho_camisa_manga_3_4')
+        tamanho_blusa = request.POST.get('tamanho_blusa')
+        tamanho_jaleco = request.POST.get('tamanho_jaleco')
 
         # Salve os dados no banco de dados
         pessoa = Pessoa(
@@ -75,7 +84,20 @@ def cadastrar_pessoa(request):
             punho=punho,
             larg_perna=larg_perna,
             comp_saia=comp_saia,
-            comp_calca=comp_calca
+            comp_calca=comp_calca,
+            tamanho_blazer=tamanho_blazer,
+            tamanho_jaqueta=tamanho_jaqueta,
+            tamanho_calca_social=tamanho_calca_social,
+            tamanho_calca_cigarrete=tamanho_calca_cigarrete,
+            tamanho_calca_jeans=tamanho_calca_jeans,
+            tamanho_saia=tamanho_saia,
+            tamanho_gilet=tamanho_gilet,
+            tamanho_camisa_sem_manga=tamanho_camisa_sem_manga,
+            tamanho_camisa_manga_curta=tamanho_camisa_manga_curta,
+            tamanho_camisa_manga_longa=tamanho_camisa_manga_longa,
+            tamanho_camisa_manga_3_4=tamanho_camisa_manga_3_4,
+            tamanho_blusa=tamanho_blusa,
+            tamanho_jaleco=tamanho_jaleco
         )
         pessoa.save()
 
