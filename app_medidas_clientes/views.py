@@ -159,3 +159,4 @@ def cadastro_cliente(request):
     else:
         form = ClienteForm()
     return render(request, 'clientes/cadastro.html', {'form': form})
+

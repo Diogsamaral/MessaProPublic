@@ -15,4 +15,5 @@ urlpatterns = [
     path('novo_tecido/', novo_tecido, name='novo_tecido'),
     path('novo_aviamento/', novo_aviamento, name='novo_aviamento'),
     path('cadastro/', views.cadastro_cliente, name='cadastro'),
+
 ]

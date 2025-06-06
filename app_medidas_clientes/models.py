@@ -11,9 +11,12 @@ class Pessoa(models.Model):
     )
     contato = models.CharField(validators=[telefone_regex], max_length=16)
     empresa = models.CharField(max_length=110)
+<<<<<<< HEAD
     sexo = models.CharField(max_length=20, null=True, blank=True)  # 'Masculino' ou 'Feminino'
     peso = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
     altura = models.CharField(max_length=3, null=True, blank=True)
+=======
+>>>>>>> 7c71f2c070b5728c32a6e8cc593fc22cfba98910
     ombro_ombro = models.CharField(max_length=10, null=True, blank=True)
     torax_busto = models.CharField(max_length=10, null=True, blank=True)
     cintura_alta = models.CharField(max_length=10, null=True, blank=True)
@@ -65,6 +68,7 @@ class Aviamento(models.Model):
     quantidade = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
+<<<<<<< HEAD
         return self.artigo
     
 
@@ -79,3 +83,6 @@ class Cliente(models.Model):
     def __str__(self):
         return self.nome
 
+=======
+        return self.artigo
+>>>>>>> 7c71f2c070b5728c32a6e8cc593fc22cfba98910

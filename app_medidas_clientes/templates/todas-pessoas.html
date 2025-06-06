@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -57,3 +58,64 @@
     {% endblock %}
 </body>
 </html>
+=======
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Messa.Pro</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'app_medidas_clientes/busca.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        form {
+            margin: 20px;
+        }
+
+        input[type="text"], input[type="email"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    {% block content %}
+    <h2>Informações do Banco de Dados:</h2>
+    <ul>
+        {% for registro in registros %}
+            <li>{{ registro.nome }}, {{ registro.email }}, {{ registro.contato }}</li>
+        {% endfor %}
+    </ul>
+    {% endblock %}
+</body>
+</html>
+>>>>>>> 7c71f2c070b5728c32a6e8cc593fc22cfba98910
