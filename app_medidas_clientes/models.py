@@ -43,6 +43,7 @@ class Pessoa(models.Model):
     tamanho_camisa_manga_3_4 = models.CharField(max_length=10, null=True, blank=True)
     tamanho_blusa = models.CharField(max_length=10, null=True, blank=True)
     tamanho_jaleco = models.CharField(max_length=10, null=True, blank=True)
+    observacao = models.TextField(null=True, blank=True)
     
 
 
