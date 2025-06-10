@@ -19,6 +19,7 @@ class AviamentoAdmin(admin.ModelAdmin):
 admin.site.register(Aviamento, AviamentoAdmin)
 
 class ClienteAdmin(admin.ModelAdmin):
-    list_display = ('id', 'nome', 'email', 'telefone')
+    list_display = ('id', 'nome', 'email', 'telefone', 'data_cadastro')
+    search_fields = ('nome', 'email', 'cpf', 'cnpj')
     
 admin.site.register(Cliente, ClienteAdmin)
