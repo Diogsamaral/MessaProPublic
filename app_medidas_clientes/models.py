@@ -2,6 +2,7 @@ from django.db import models
 from django.core.validators import RegexValidator
 from django.utils import timezone
 
+
 # Create your models here.
 class Pessoa(models.Model):
     nome = models.CharField(max_length=100)

@@ -1,6 +1,6 @@
 
 from django import forms
-from .models import Tecido, Aviamento, Cliente
+from .models import Tecido, Aviamento, Cliente, Pessoa
 
 class TecidoForm(forms.ModelForm):
     class Meta:
@@ -11,8 +11,6 @@ class AviamentoForm(forms.ModelForm):
     class Meta:
         model = Aviamento
         fields = ['artigo', 'cor', 'fornecedor', 'cliente', 'quantidade']
-
-
 
 class ClienteForm(forms.ModelForm):
     class Meta:
@@ -39,3 +37,8 @@ class ClienteForm(forms.ModelForm):
             'inscricao_estadual': forms.TextInput(attrs={'class': 'form-control'}),
             'inscricao_municipal': forms.TextInput(attrs={'class': 'form-control'}),
         }
+
+class PessoaForm(forms.ModelForm):
+    class Meta:
+        model = Pessoa
+        fields = '__all__'
