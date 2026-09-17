@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-^!&7)6zwdsf5d7b4b$v-j0()*+vu226a1#q@kb^h2r1^_+^@^s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['messapropublic-gilt.vercel.app']
 
 
 # Application definition
