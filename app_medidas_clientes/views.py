@@ -95,3 +95,7 @@ def cadastro_cliente(request):
         form = ClienteForm()
     return render(request, 'clientes/cadastro.html', {'form': form})
 
+
+
+def home(request):
+    return render(request, 'app_medidas_clientes/home.html')
